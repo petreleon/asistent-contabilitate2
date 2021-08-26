@@ -4,6 +4,19 @@ from unidecode import unidecode
 # importing all files  from tkinter
 from tkinter import * 
 from tkinter import ttk
+from enum import Enum
+class colNames(Enum):
+    NUMAR_FACTURA = 'Numar factura'
+    DATA = 'Data'
+    PERSOANA_JURIDICA = 'Persoana juridica'
+    CUI = 'CNP / CUI'
+    COD_EXTERN = 'Cod extern'
+    PRODUS = 'Comenzi'
+    COD_PRODUS = 'Cod produs'
+    CANTITATE = 'Cantitate'
+    PRET = 'Valoare fara TVA'
+
+
   
 # import only asksaveasfile from filedialog
 # which is used to save file in any extension

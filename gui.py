@@ -191,7 +191,7 @@ def processRequests():
         reply = requests.post(URL_ANAF, json= requestData).json()['found']
         for iter in reply:
             ADRESA = unidecode(iter["adresa"])
-            DENUMIRE = iter["denumire"]
+            DENUMIRE = unidecode(iter["denumire"])
             REG_COMERT = iter.get("nrRegCom", "")
             TVA = iter["scpTVA"]
             CUI = iter["cui"]

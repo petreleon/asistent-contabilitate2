@@ -1,0 +1,11 @@
+POST https://webservicesp.anaf.ro/PlatitorTvaRest/api/v5/ws/tva HTTP/1.1
+content-type: application/json
+
+[
+    {
+        "cui": 31220820, "data":"2021-08-26"
+    },
+    {
+        "cui": 34526361, "data":"2021-08-26"
+    }		
+]

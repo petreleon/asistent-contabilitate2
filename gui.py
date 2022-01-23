@@ -13,7 +13,7 @@ import time
 # today
 from datetime import date
 
-URL_ANAF = 'https://webservicesp.anaf.ro/PlatitorTvaRest/api/v5/ws/tva'
+URL_ANAF = 'https://webservicesp.anaf.ro/PlatitorTvaRest/api/v6/ws/tva'
 today = date.today().strftime("%Y-%m-%d")
 print(today)
 
@@ -165,7 +165,7 @@ Operat=D
 """.format(
             iterator = index,
             NrDoc = factura[colNames.NUMAR_FACTURA],
-            data = factura[colNames.DATA],
+            data = ".".join( factura[colNames.DATA].split("-").reversed() ),
             Stornare = stornare,
             CodClient = factura[colNames.COD_EXTERN],
             totalArticole = len(factura[Product_Group.PRODUSE])

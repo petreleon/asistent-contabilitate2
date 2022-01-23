@@ -165,7 +165,7 @@ Operat=D
 """.format(
             iterator = index,
             NrDoc = factura[colNames.NUMAR_FACTURA],
-            data = ".".join( factura[colNames.DATA].split("-").reversed() ),
+            data = ".".join( reversed( factura[colNames.DATA].split("-") ) ),
             Stornare = stornare,
             CodClient = factura[colNames.COD_EXTERN],
             totalArticole = len(factura[Product_Group.PRODUSE])

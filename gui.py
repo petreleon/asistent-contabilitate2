@@ -112,7 +112,7 @@ def iterOnRows(rows):
             else:
                 facturi.append(factura_curenta)
             factura_curenta = dict()
-            facturi.append(factura_curenta)
+            # facturi.append(factura_curenta)
             factura_curenta[colNames.CUI] = getFromRow(row, colNames.CUI)
             factura_curenta[colNames.COD_EXTERN] = getExternalCodeCompany(factura_curenta[colNames.CUI], getFromRow(row, colNames.COD_EXTERN))
             factura_curenta[colNames.DATA] = getFromRow(row, colNames.DATA)

@@ -115,7 +115,7 @@ def iterOnRows(rows):
             # facturi.append(factura_curenta)
             factura_curenta[colNames.CUI] = getFromRow(row, colNames.CUI)
             factura_curenta[colNames.COD_EXTERN] = getExternalCodeCompany(factura_curenta[colNames.CUI], getFromRow(row, colNames.COD_EXTERN))
-            factura_curenta[colNames.DATA] = getFromRow(row, colNames.DATA)
+            factura_curenta[colNames.DATA] = "-".join( reversed( getFromRow(row, colNames.DATA).split("/")) )
             factura_curenta[colNames.NUMAR_FACTURA] = getFromRow(row, colNames.NUMAR_FACTURA)
             factura_curenta[Product_Group.PRODUSE] = list()
         produs_curent = dict()
@@ -131,7 +131,7 @@ inputtxt = Text(root, height = 1, width = 20)
 
 
 def convertFacturiToString(data):
-    (anul, luna, day) = data.split("-")
+    (day, luna, anul) = data.split("/")
     strFactura = """[InfoPachet]
 AnLucru={AnLucru}
 LunaLucru={LunaLucru}

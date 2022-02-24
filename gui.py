@@ -78,6 +78,9 @@ def save():
 def getFromRow(row, col_enum):
     return row[collumn_names[col_enum.value]].value
 
+def date_to_str(date):
+    return str(date).split(" ")[0]
+
 lastNumber = 0 # will be modified further
 externalCodes = dict()
 companiesToQuery = list()
@@ -115,7 +118,7 @@ def iterOnRows(rows):
             # facturi.append(factura_curenta)
             factura_curenta[colNames.CUI] = getFromRow(row, colNames.CUI)
             factura_curenta[colNames.COD_EXTERN] = getExternalCodeCompany(factura_curenta[colNames.CUI], getFromRow(row, colNames.COD_EXTERN))
-            factura_curenta[colNames.DATA] = "-".join( reversed( getFromRow(row, colNames.DATA).split("/")) )
+            factura_curenta[colNames.DATA] = date_to_str(getFromRow(row, colNames.DATA))
             factura_curenta[colNames.NUMAR_FACTURA] = getFromRow(row, colNames.NUMAR_FACTURA)
             factura_curenta[Product_Group.PRODUSE] = list()
         produs_curent = dict()
@@ -131,7 +134,8 @@ inputtxt = Text(root, height = 1, width = 20)
 
 
 def convertFacturiToString(data):
-    (day, luna, anul) = data.split("/")
+    print(data)
+    (anul, luna, day) = date_to_str(data).split("-")
     strFactura = """[InfoPachet]
 AnLucru={AnLucru}
 LunaLucru={LunaLucru}

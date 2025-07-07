@@ -13,7 +13,7 @@ import time
 # today
 from datetime import date
 
-URL_ANAF = 'https://webservicesp.anaf.ro/PlatitorTvaRest/api/v6/ws/tva'
+URL_ANAF = 'https://webservicesp.anaf.ro/PlatitorTvaRest/api/v9/ws/tva'
 today = date.today().strftime("%Y-%m-%d")
 print(today)
 
